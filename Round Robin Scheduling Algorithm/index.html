@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <title>Round Robin Scheduling</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container formcontainer" id="inputfields">
+        <div class="formfields d-flex flex-column justify-content-center align-items-center">
+            <div class="mainheading">
+                <h2>Round Robin Scheduling</h2>
+            </div>
+            <form id="processForm">
+                <div id="processInputs">
+                    <div class="inputfield my-3">
+                        <label>Process 0 Arrival Time: </label>
+                        <input type="number" id="at0" required>
+                    </div>
+                    <div class="inputfield my-3">
+                        <label>Process 0 Execution Time: </label>
+                        <input type="number" id="et0" required>
+                    </div>
+                </div>
+                <div class="btncontainer my-3">
+                    <button type="button" id="add">Add Another Process</button>
+                </div>
+                <div class="quantumfield mt-5 mb-2">
+                    <div class="inputfield"></div>
+                    <label>Time Quantum: </label>
+                    <input type="number" id="timeQuantum" required>
+                    <div class="btncontainer my-3">
+                        <button type="button" onclick="runRoundRobin()">Run Round Robin</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container tablecontainer" id="tablecontainer">
+        <h2>Process Scheduling Result</h2>
+        <div class="tablescroll" style="overflow-x: auto;">
+            <table id="resultTable" class="mt-5">
+                <thead>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container formcontainer" id="summarycontainer">
+        <div class="formfields d-flex flex-column justify-content-center align-items-center">
+            <div class="mainheading">
+                <h2 id="summaryheading"></h2>
+            </div>
+            <div id="summary" class="mt-4" style="font-size: 17px;">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="roundrobin.js"></script>
+
+</html>
